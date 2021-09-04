@@ -10,9 +10,10 @@
         "app/**"
     ],
     "scripts": {
-        "clean": "lerna clean && rmdir /s /q node_modules",
-        "serve": "yarn workspace @fusion5/webpart-example serve",
-        "build-shared": "yarn workspace @fusion5/controller-sharepoint-list build && yarn workspace @fusion5/utils-spfx-controls-react build"
+        "build-shared": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build",
+        "serve": "yarn workspace @mauriora/webpart-example serve",
+        "build": "yarn workspace @mauriora/webpart-example build",
+        "clean": "lerna clean && rmdir /s /q node_modules"
     },
     "devDependencies": {
         "lerna": "^4.0.0"

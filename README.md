@@ -30,7 +30,7 @@ You should have the following installed:
 ## Minimal path to awesomeness
 ```
 yarn global add lerna
-git clone --recurse-submodules https://fusion5vsts.visualstudio.com/DefaultCollection/F5%20SharePoint/_git/WebPart-Example-Solution
+git clone --recurse-submodules https://github.com/mauriora/WebPart-Example-Solution.git
 cd WebPart-Example-Solution
 lerna bootstrap
 code .
@@ -44,7 +44,7 @@ yarn serve
 add the webpart to the page
 
 # Build and install
-1. In a solution terminal execute `yarn workspace @fusion5/webpart-example serve`
+1. In a solution terminal execute `yarn workspace @mauriora/webpart-example serve`
 2. [browse to the sharepoint app store on *YOUR-TENANT*](https://YOUR-TENANT.sharepoint.com/sites/apps/AppCatalog/Forms/AllItems.aspx)
 3. Click **Upload**
 4. Click **Choose files**
