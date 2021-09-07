@@ -36,6 +36,9 @@ lerna bootstrap
 code .
 ```
 open a terminal in the solution (root) folder
+The `node_modules` folder in the solution should contain the majority of dependencies, while the `node_modules` folder of each sub modules should only contain very few dependencies if any.
+All modules in `shared` should be linked in the solutions `node_modules` folder.
+
 ```
 yarn build-shared
 yarn serve
@@ -103,3 +106,19 @@ Then do a pull request to merge your branch into the main branch.
         - config
             - config.json
             - package-solution.json
+
+# Add a new sub module to the solution
+1. Create a new repository with at least one file (e.g. default README.md)
+2. Copy the clone URL to the clipboard
+3. Open Git-Extension
+4. Open the solution
+5. Open the menu `Repository` and select `Manage submodules...`
+6. Click `Add submodule`
+7. Paste the URL from the clipboard into `Path to submodule`
+8. **Prefix the local path with either `app/` or `shared/`**
+9. Select the appropiate branch, e.g. `main`
+10. Click `Add`
+11. edit the `package.json` to have a qualified package name
+12. In a solution folder terminal execute:
+    1. `yarn clean-node-modules`
+    2. `lerna bootstrap`
