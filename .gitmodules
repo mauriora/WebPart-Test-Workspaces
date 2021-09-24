@@ -10,3 +10,7 @@
 	path = shared/Controller-SharePoint-List
 	url = https://github.com/mauriora/Controller-SharePoint-List.git
 	branch = main
+[submodule "shared/MVC-Base"]
+	path = shared/MVC-Base
+	url = https://github.com/mauriora/MVC-Base.git
+	branch = main
