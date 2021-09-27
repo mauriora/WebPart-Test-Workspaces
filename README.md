@@ -3,10 +3,11 @@
 This is an example solution of a SharePoint MVC implementation using PNPjs, Classtransformer, MobX, Spfx-Controls and Fluent UI.
 It hopefully illustrates:
 
-- create a model for the SharePoint access
-- reusable modules for the basics, data source access
-- reusable views presentation
-- > focus on business logic development
+- easily extend a model to reflect your requirements
+- reusable controller for the basics, data source access
+- reusable views
+
+> focus on business logic development
 
 ## Table of contents
 
@@ -45,11 +46,18 @@ The lists are selected in the webpart configuration. They need to match the mode
 [Edit properties of the models](./app/WebPart-Example/src/webparts/WebPart-Example/models) to match your lists. *TestList* is using *Test3* as lookup. The Announcements list can be located on a different site.
 
 ```typescript
+export class TestList1 extends ListItem {
+    public constructor() {
+        super();
+    }
+
     @Expose({ name: 'CustomText'})
     public customText: string;
+    ...
+}
 ```
 
-Maps the the SharePoint internal fieldname `CustomText` to the property `customText`.
+Extending from `ListItem` makes it on observable SharewPoint object. It inherits properties like `author`, `contentTypeId`, ... The SharePoint internal fieldname `CustomText` is transformed to the property `customText`.
 
 #### Build
 
