@@ -16,7 +16,7 @@ It hopefully illustrates:
     2. [Minimal path to awesomeness](#minimal-path-to-awesomeness)
 2. [Build and install](#build-and-install)
 3. [Content](#content)
-    1. Mobx state management](#mobx-state-management)
+    1. [Mobx state management](#mobx-state-management)
 4. [Contribute](#contribute)
     1. [To do list](#to-do-list)
 5. [Create new project](#create-new-project)
@@ -157,7 +157,7 @@ Each *ListAndForm* contains a list with two forms next to each other. Each form 
 
 No explicit event handler exists between the forms.
 
-a modification to the `item` in either form is instantly reflected in the other form. Here the example of the boolean field:
+a modification to the `item[property]` in either form is instantly reflected in the other form. Here the example of the boolean field:
 
 ```typescript
 export const BooleanField: PropertyFieldFC = observer(({ info, item, property }) => {
