@@ -43,7 +43,7 @@ The lists are selected in the webpart configuration. They need to match the mode
 
 #### Models
 
-[Edit properties of the models](./app/WebPart-Example/src/webparts/WebPart-Example/models) to match your lists. *TestList* is using *Test3* as lookup. The Announcements list can be located on a different site.
+[Edit properties of the models](./app/WebPart-Example/src/webparts/WebPart-Example/models) to match your lists. As example:
 
 ```typescript
 export class TestList1 extends ListItem {
@@ -54,10 +54,21 @@ export class TestList1 extends ListItem {
     @Expose({ name: 'CustomText'})
     public customText: string;
     ...
+
+    @Type( () => ListItemBase )
+    @Expose({ name: 'SingleLookup' })
+    public singleLookup: ListItemBase;
+
 }
 ```
 
-Extending from `ListItem` makes it on observable SharewPoint object. It inherits properties like `author`, `contentTypeId`, ... The SharePoint internal fieldname `CustomText` is transformed to the property `customText`.
+Extending from `ListItem` makes it on observable SharewPoint object.
+It inherits properties like `author`, `contentTypeId`, ... The SharePoint
+
+- internal fieldname `CustomText` is transformed to the property `customText`.
+- `singleLookup` is using `ListItemBase` as a lookup to Title and Id.
+
+The `Announcements` list can be located on a different site.
 
 #### Build
 
