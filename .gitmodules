@@ -1,7 +1,3 @@
-[submodule "app/WebPart-Example"]
-	path = app/WebPart-Example
-	url = https://github.com/mauriora/WebPart-Example.git
-	branch = main
 [submodule "shared/Utils-SPFx-Controls-React"]
 	path = shared/Utils-SPFx-Controls-React
 	url = https://github.com/mauriora/Utils-SPFx-Controls-React.git
@@ -9,4 +5,8 @@
 [submodule "shared/Controller-SharePoint-List"]
 	path = shared/Controller-SharePoint-List
 	url = https://github.com/mauriora/Controller-SharePoint-List.git
+	branch = main
+[submodule "app/WebPart-Test"]
+	path = app/WebPart-Test
+	url = https://github.com/mauriora/WebPart-Test.git
 	branch = main
