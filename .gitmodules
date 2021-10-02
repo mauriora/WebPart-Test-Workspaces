@@ -10,3 +10,7 @@
 	path = app/WebPart-Test
 	url = https://github.com/mauriora/WebPart-Test.git
 	branch = main
+[submodule "shared/Model-Announcement-Extended"]
+	path = shared/Model-Announcement-Extended
+	url = https://github.com/mauriora/Model-Announcement-Extended.git
+	branch = main
