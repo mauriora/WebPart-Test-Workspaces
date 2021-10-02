@@ -1,24 +1,28 @@
 # Introduction
 
-This is an example solution of a SharePoint MVC implementation using PNPjs, Classtransformer, MobX, Spfx-Controls and Fluent UI.
-It hopefully illustrates:
+This is an test webpart root workspace of a SharePoint MVC implementation using PNPjs, Classtransformer, MobX, Spfx-Controls and Fluent UI.
 
-- easily extend a model to reflect your requirements
-- reusable controller for the basics, data source access
-- reusable views
+It's purpose is to test and showcase the technical state of the [reusable hybrid repo mvc spfx examples](https://github.com/mauriora/reusable-hybrid-repo-mvc-spfx-examples):
+
+- clean invisible object state management with MobX
+  - the webpart has no reference to Mobx it only deals with the data objects
+  - all MobX use in the shared libraries
+- state of the Views, fields and form
+- access to a list on a different site
+- starting point for webparts accessing lists on different sites
 
 > focus on business logic development
 
 ## Table of contents
 
 1. [Getting Started](#getting-started)
-    1. [Requirements](#requirements)
-    2. [Minimal path to awesomeness](#minimal-path-to-awesomeness)
+   1. [Requirements](#requirements)
+   2. [Minimal path to awesomeness](#minimal-path-to-awesomeness)
 2. [Build and install](#build-and-install)
 3. [Content](#content)
-    1. [Mobx state management](#mobx-state-management)
+   1. [Mobx state management](#mobx-state-management)
 4. [Contribute](#contribute)
-    1. [To do list](#to-do-list)
+   1. [To do list](#to-do-list)
 5. [Create new project](#create-new-project)
 
 ## Getting Started
@@ -43,7 +47,7 @@ The lists are selected in the webpart configuration. They need to match the mode
 
 #### Models
 
-[Edit properties of the models](./app/WebPart-Example/src/webparts/WebPart-Example/models) to match your lists. As example:
+[Edit properties of the models](./app/WebPart-Test/src/webparts/WebPart-Test/models) to match your lists. As example:
 
 ```typescript
 export class TestList1 extends ListItem {
@@ -73,10 +77,9 @@ The `Announcements` list can be located on a different site.
 #### Build
 
 ```shell
-yarn global add lerna
-git clone --recurse-submodules https://github.com/mauriora/WebPart-Example-Solution.git
-cd WebPart-Example-Solution
-lerna bootstrap
+git clone --recurse-submodules https://github.com/mauriora/WebPart-Test-Workspaces.git
+cd WebPart-Test-Workspaces
+yarn
 code .
 ```
 
@@ -94,7 +97,7 @@ add the webpart to the page
 
 ## Build and install
 
-1. In a solution terminal execute `yarn workspace @mauriora/webpart-example serve`
+1. In a solution terminal execute `yarn workspace @mauriora/webpart-test serve`
 2. [browse to the sharepoint app store on *YOUR-TENANT*](https://YOUR-TENANT.sharepoint.com/sites/apps/AppCatalog/Forms/AllItems.aspx)
 3. Click **Upload**
 4. Click **Choose files**

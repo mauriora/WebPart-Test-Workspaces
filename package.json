@@ -1,8 +1,8 @@
 {
-    "name": "@mauriora/webpart-example-solution",
-    "version": "0.0.2",
+    "name": "@mauriora/webpart-test-workspaces",
+    "version": "0.0.3",
     "repository": {
-        "url": "https://github.com/mauriora/screen-controller-mono-repo"
+        "url": "https://github.com/mauriora/WebPart-Test-Workspaces"
     },
     "private": true,
     "workspaces": [
@@ -10,19 +10,22 @@
         "app/**"
     ],
     "scripts": {
-        "lint-shared": "yarn workspace @mauriora/controller-sharepoint-list lint && yarn workspace @mauriora/utils-spfx-controls-react lint",
-        "clean-shared": "yarn workspace @mauriora/controller-sharepoint-list clean && yarn workspace @mauriora/utils-spfx-controls-react clean",
-        "build-shared": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build",
-        "lint-app": "yarn workspace @mauriora/webpart-example lint",
-        "serve": "yarn workspace @mauriora/webpart-example serve",
-        "build": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build & yarn workspace @mauriora/webpart-example build",
-        "build-app": "yarn workspace @mauriora/webpart-example build",
-        "clean-app": "yarn workspace @mauriora/webpart-example clean",
-        "clean-node-modules": "lerna clean && rmdir /s node_modules",
-        "clean-all": "yarn workspace @mauriora/webpart-example clean && yarn workspace @mauriora/controller-sharepoint-list clean && yarn workspace @mauriora/utils-spfx-controls-react clean"
+        "lint-shared": "yarn workspace @mauriora/controller-sharepoint-list lint && yarn workspace @mauriora/utils-spfx-controls-react lint && yarn workspace @mauriora/model-announcement-extended lint",
+        "clean-shared": "yarn workspace @mauriora/controller-sharepoint-list clean && yarn workspace @mauriora/utils-spfx-controls-react clean && yarn workspace @mauriora/model-announcement-extended clean",
+        "build-shared": "yarn workspace @mauriora/controller-sharepoint-list build && yarn workspace @mauriora/utils-spfx-controls-react build && yarn workspace @mauriora/model-announcement-extended build",
+        "lint-app": "yarn workspace @mauriora/webpart-test lint",
+        "serve": "yarn workspace @mauriora/webpart-test serve",
+        "build-release": "yarn workspace @mauriora/webpart-test build-release",
+        "build-debug": "yarn workspace @mauriora/webpart-test build-debug",
+        "build-all-debug": "yarn build-shared & yarn build-debug",
+        "build-all-release": "yarn build-shared & yarn build-release",
+        "clean-app": "yarn workspace @mauriora/webpart-test clean",
+        "clean-node-modules": "rimraf ./shared/*/node_modules && rimraf app/*/node_modules && rimraf ./node_modules",
+        "clean-all": "yarn clean-app && yarn clean-shared"
     },
     "devDependencies": {
-        "lerna": "^4.0.0"
+        "rimraf": "^3.0.2",
+        "yarn": "^1.0.0"
     },
     "dependencies": {}
 }
